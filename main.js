@@ -25,9 +25,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _abstract_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../abstract-page */ "dRyH");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "jhN1");
-/* harmony import */ var _components_header_header_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/header/header.component */ "e9by");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "tyNb");
-
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "tyNb");
 
 
 
@@ -40,12 +38,11 @@ class LayoutPageComponent extends _abstract_page__WEBPACK_IMPORTED_MODULE_0__["A
     }
 }
 LayoutPageComponent.ɵfac = function LayoutPageComponent_Factory(t) { return new (t || LayoutPageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["Title"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["Meta"])); };
-LayoutPageComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: LayoutPageComponent, selectors: [["app-layout-page"]], features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]], decls: 3, vars: 0, consts: [[1, "container-fluid", "p-0"]], template: function LayoutPageComponent_Template(rf, ctx) { if (rf & 1) {
+LayoutPageComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: LayoutPageComponent, selectors: [["app-layout-page"]], features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]], decls: 2, vars: 0, consts: [[1, "container-fluid", "p-0"]], template: function LayoutPageComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "app-header");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](2, "router-outlet");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "router-outlet");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    } }, directives: [_components_header_header_component__WEBPACK_IMPORTED_MODULE_3__["HeaderComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterOutlet"]], encapsulation: 2 });
+    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterOutlet"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -282,11 +279,6 @@ const routes = [
         children: [
             {
                 path: '',
-                redirectTo: 'home',
-                pathMatch: 'full'
-            },
-            {
-                path: 'home',
                 loadChildren: () => __webpack_require__.e(/*! import() | modules-home-home-module */ "modules-home-home-module").then(__webpack_require__.bind(null, /*! ./modules/home/home.module */ "iydT")).then(m => m.HomeModule)
             },
             {
@@ -296,7 +288,12 @@ const routes = [
             {
                 path: 'contact',
                 loadChildren: () => __webpack_require__.e(/*! import() | modules-contact-contact-module */ "modules-contact-contact-module").then(__webpack_require__.bind(null, /*! ./modules/contact/contact.module */ "kPMt")).then(m => m.ContactModule)
-            }
+            },
+            {
+                path: '**',
+                redirectTo: '',
+                pathMatch: 'full'
+            },
         ]
     },
     {
